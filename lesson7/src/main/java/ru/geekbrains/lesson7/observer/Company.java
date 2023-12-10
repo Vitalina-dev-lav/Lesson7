@@ -2,6 +2,8 @@ package ru.geekbrains.lesson7.observer;
 
 import java.util.Random;
 
+import ru.geekbrains.lesson7.factory.EmployeeType;
+
 public class Company {
 
     private Random random = new Random();
@@ -19,9 +21,9 @@ public class Company {
         this.maxSalary = maxSalary;
     }
 
-    public void needEmployee(){
+    public void needEmployee(EmployeeType employeeType, JobType jobType){
         int salary = random.nextInt(maxSalary);
-        jobAgency.sendOffer(name, salary);
+        jobAgency.sendOffer(name, employeeType, jobType, salary);
     }
 
 }
